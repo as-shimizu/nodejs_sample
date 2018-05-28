@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(method='POST', action='/comform')
+    table
+      tr
+        td 名前
+        td
+          input(type='textbox', id='name')
+      tr
+        td 所属  
+    　　td
+          input(type='textbox', id='belong')
+      tr
+        td 電話番号
+        td 
+          input(type='textbox', id='tel')
+      tr 
+        td メールアドレス
+        td
+          input(type='textbox', id='email')
+    input(type='submit', id='send', value='確認')
