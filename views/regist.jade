@@ -2,24 +2,23 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
 
-  form(method='POST', action='/comform')
+  form(method='POST', action='/regist')
     table
       tr
         td 名前
         td
-          input(type='textbox', id='name')
+          input(type='textbox', name='name')
       tr
         td 所属  
         td
-          input(type='textbox', id='belong')
+          input(type='textbox', name='belong')
       tr
         td 電話番号
         td 
-          input(type='textbox', id='tel')
+          input(type='textbox', name='tel')
       tr 
         td メールアドレス
         td
-          input(type='textbox', id='email')
+          input(type='textbox', name='email')
     input(type='submit', id='send', value='確認')

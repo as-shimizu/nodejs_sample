@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+
+  table  
+    tr
+      td 名前
+      td #{name}
+    tr
+      td 所属  
+      td #{belong}
+    tr
+      td 電話番号
+      td #{tel}
+    tr 
+      td メールアドレス
+      td #{email}
+  form(method='POST', action='/')
+    input(type='submit', id='regist', value='登録')
+  

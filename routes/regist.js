@@ -3,7 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log("route/regist.js");
   res.render('regist', { title: '新規登録' });
+});
+
+router.post('/', function(req, res, next) {
+  var a = '/confirm?name=' + req.body.name + '&belong=' + req.body.belong + '&tel=' + req.body.tel + '&email=' + req.body.email;
+  res.redirect(a);
 });
 
 module.exports = router;
