@@ -3,19 +3,23 @@ extends layout
 block content
   h1= title
 
-  table  
-    tr
-      td 名前
-      td #{name}
-    tr
-      td 所属  
-      td #{belong}
-    tr
-      td 電話番号
-      td #{tel}
-    tr 
-      td メールアドレス
-      td #{email}
-  form(method='POST', action='/')
+  form(method='POST', action='/confirm')
+    table  
+      tr
+        td 名前
+        td #{name}
+      tr
+        td 所属  
+        td #{belong}
+      tr
+        td 電話番号
+        td #{tel}
+      tr 
+        td メールアドレス
+        td #{email}
+    input(type='hidden', name='name', value='#{name}')
+    input(type='hidden', name='belong', value='#{belong}')
+    input(type='hidden', name='tel', value='#{tel}')
+    input(type='hidden', name='email', value='#{email}')
     input(type='submit', id='regist', value='登録')
   

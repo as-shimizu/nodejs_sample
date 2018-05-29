@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-router.post('/confirm', function(req, res, next) {
+router.post('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("route/regist.js");
+  console.log("pass route/regist.js");
   res.render('regist', { title: '新規登録' });
 });
 
