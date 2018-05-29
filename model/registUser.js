@@ -1,8 +1,8 @@
 var dbUtil = require('./dbUtil.js');
 
 module.exports = {
-    insertData : function(name,belong,tel,email) {
-        var sql = 'insert into regist_user (user_name, belong, tel, email) values ("';
+    insertData : function(name,belong,tel,email, callback) {
+        var sql = 'insert into registUser (name, belong, tel, email) values ("';
         sql += name;
         sql += '", "';
         sql += belong;
@@ -12,7 +12,8 @@ module.exports = {
         sql += email;
         sql += '");';
         console.log(sql);
-        var result = dbUtil.insert(sql);
-        return result;
+        dbUtil.insert(sql, function(error) {
+            return callback(error);
+        });
     }
 }

@@ -16,10 +16,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   console.log("pass post of route/confirm.js");
-  var result = registUser.insertData(req.body.name, req.body.belong, req.body.tel, req.body.email);
-  if (result) {
-    res.redirect("/");
-  }
+  registUser.insertData(req.body.name, req.body.belong, req.body.tel, req.body.email, function(error) {
+    if (error) {
+      var a = '/confirm?name=' + req.body.name + '&belong=' + req.body.belong + '&tel=' + req.body.tel + '&email=' + req.body.email;
+      res.redirect(a);
+    } else {
+      res.redirect("/");
+    }
+  });
 });
 
 module.exports = router;
