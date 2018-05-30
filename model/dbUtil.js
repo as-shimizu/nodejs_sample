@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 
 module.exports = {
     select : function(sql) {
-        getConnection();
+        //getConnection();
         connection.query(sql, function (error, results, fields) {
             console.log(results);
             return results;

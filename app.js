@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var i18n = require("i18n");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -40,6 +41,26 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+//for i18n
+i18n.configure({
+  // 利用するlocalesを設定。これが辞書ファイルとひも付きます
+  locales: ['ja', 'en'],
+  defaultLocale: 'ja',
+  // 辞書ファイルのありかを指定
+  directory: __dirname + "/locales",
+  // オブジェクトを利用したい場合はtrue
+  objectNotation: true
+});
+
+app.use(i18n.init);
+// manualでi18nセッション管理できるように設定しておきます
+app.use(function (req, res, next) {
+  if (req.session.locale) {
+    i18n.setLocale(req, req.session.locale);
+  }
+  next();
 });
 
 module.exports = app;

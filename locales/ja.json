@@ -1,0 +1,8 @@
+{
+    "registUser": {
+        "Name": "名前",
+        "Belong": "所属",
+        "Phone Number": "電話番号",
+        "E-Mail": "メールアドレス"
+    }
+}
