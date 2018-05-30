@@ -1,13 +1,26 @@
 {
-    "name": "名前",
-    "belong": "所属",
-    "tel": "電話番号",
-    "email": "メールアドレス",
-    "regist": "新規登録",
-    "confirm": "確認",
-    "add": "登録",
-    "see list": "一覧表示",
-    "login": "ログイン",
-    "loginId": "ログインID",
-    "return": "戻る"
+	"label": {
+		"name": "名前",
+		"belong": "所属",
+		"tel": "電話番号",
+		"email": "メールアドレス"
+	},
+	"common": {
+		"regist": "新規登録",
+		"confirm": "確認",
+		"add": "登録",
+		"see list": "一覧表示",
+		"login": "ログイン",
+		"loginId": "ログインID",
+		"return": "戻る"
+	},
+	"errorMSG": {
+		"er001": "ログインID(%s)は存在しません。",
+		"er002": "DBアクセスエラーが発生しました。",
+		"er003": "ログインIDを入力してください。",
+		"er004": "名前は必ず入力してください。"
+	},
+	"regist": "regist",
+	"confirn": "confirn",
+	"see list": "see list"
 }

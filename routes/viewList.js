@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var registUser = require('../model/registUser');
+var i18n = require('i18n');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log("pass route/viewList.js");
   registUser.selectAll(function(error, result) {
     if(error) {
-        res.render('index', { title: 'Home', error: error});
+        var message = i18n.__('errorMSG.er002');
+        res.render('index', { title: 'Home', error: message});
     } else {
         console.log(result);
         var name = [];
@@ -20,7 +22,7 @@ router.get('/', function(req, res, next) {
             tel.push(result[i].tel);
             email.push(result[i].email);
         }
-        res.render('viewList', { title: 'User List',
+        res.render('viewList', { title: i18n.__('common.see list'),
                                  name: name, belong: belong, tel: tel, email: email
         });
     }

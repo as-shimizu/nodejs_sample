@@ -1,13 +1,23 @@
 {
-    "name": "Prénom",
-    "belong": "Appartenir",
-    "tel": "Téléphone",
-    "email": "E-Mail",
-    "regist": "Nouvelle Inscription",
-    "confirm": "Confirmer",
-    "add": "Ajouter",
-    "see list": "Voir la Liste",
-    "login": "Connexion",
-    "loginId": "Connexion ID",
-    "return": "Return"
+    "label": {
+        "name": "Prénom",
+        "belong": "Appartenir",
+        "tel": "Téléphone",
+        "email": "E-Mail"
+    },
+    "common": {
+        "regist": "Nouvelle Inscription",
+        "confirm": "Confirmer",
+        "add": "Ajouter",
+        "see list": "Voir la Liste",
+        "login": "Connexion",
+        "loginId": "Connexion ID",
+        "return": "Retour"
+    },
+    "errorMSG": {
+        "er001": "L'identifiant de connexion(%s) n'existe pas.",
+        "er002": "Une erreur d'accès à la base de données s'est produite.",
+        "er003": "Veuillez entrer votre identifiant de connexion."
+    }
+
 }

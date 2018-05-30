@@ -5,10 +5,10 @@ block script
 
 block content
   h1= title
-  p Welcome to #{title}
+  p(class='error')= error
 
   dev
     p 
-      input(type='button', id='regist', value="#{__('regist')}", onclick="regist();")
+      input(type='button', class='btn', id='regist', value="#{__('common.regist')}", onclick="regist();")
     p 
-      input(type='button', id='view', value="#{__('see list')}", onclick="viewList();")
+      input(type='button', class='btn', id='view', value="#{__('common.see list')}", onclick="viewList();")

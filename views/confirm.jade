@@ -1,26 +1,26 @@
 extends layout
 
 block content
-  h1= __('confirm')
+  h1= __('common.confirm')
 
   form(method='POST', action='/confirm')
     table  
       tr
-        td= __('name')
+        td= __('label.name')
         td #{name}
       tr
-        td= __('belong') 
+        td= __('label.belong') 
         td #{belong}
       tr
-        td= __('tel')
+        td= __('label.tel')
         td #{tel}
       tr 
-        td= __('email')
+        td= __('label.email')
         td #{email}
     input(type='hidden', name='name', value='#{name}')
     input(type='hidden', name='belong', value='#{belong}')
     input(type='hidden', name='tel', value='#{tel}')
     input(type='hidden', name='email', value='#{email}')
-    input(type='submit', id='regist', value="#{__('add')}")
-  input(type='button', id='return', onclick='returnRegist()', value="#{__('return')}")
+    input(type='submit', id='regist', value="#{__('common.add')}")
+  input(type='button', class='btn', id='return', onclick='returnRegist()', value="#{__('common.return')}")
   

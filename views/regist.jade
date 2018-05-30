@@ -1,25 +1,26 @@
 extends layout
 
 block content
-  h1= __('regist')
+  h1= __('common.regist')
+  p(class='error')= error
 
   form(method='POST', action='/regist')
     table
       tr
-        td= __('name')
+        td= __('label.name')
         td
           input(type='textbox', name='name')
       tr
-        td= __('belong')  
+        td= __('label.belong')  
         td
           input(type='textbox', name='belong')
       tr
-        td= __('tel')
+        td= __('label.tel')
         td 
           input(type='textbox', name='tel')
       tr 
-        td= __('email')
+        td= __('label.email')
         td
           input(type='textbox', name='email')
-    input(type='submit', id='send', value="#{__('confirm')}")
-  input(type='button', id='return', onclick='returnHome()', value="#{__('return')}")
+    input(type='submit', class='btn', id='send', value="#{__('common.confirm')}")
+  input(type='button', class='btn', id='return', onclick='returnHome()', value="#{__('common.return')}")

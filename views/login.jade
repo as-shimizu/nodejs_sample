@@ -1,16 +1,16 @@
 extends layout
 
 block content
-  h1= __('login')
-  p= error
+  h1= __('common.login')
+  p(class='error')= error
 
   dev
     form(method='POST', action='/login')
       table
         tr
-          td= __('loginId')
+          td= __('common.loginId')
           td
             input(type='textbox', name='userName')
         tr
           td(colspan='2')
-            input(type='submit', name='loginButton', value="#{__('login')}")
+            input(type='submit', class='btn', name='loginButton', value="#{__('common.login')}")

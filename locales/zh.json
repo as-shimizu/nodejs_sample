@@ -1,13 +1,22 @@
 {
-    "name": "名称",
-    "belong": "属于",
-    "tel": "电话号码",
-    "email": "邮件地址",
-    "regist": "新规登录",
-    "confirm": "确认",
-    "add": "登录",
-    "see list": "一覧表示",
-    "login": "注册",
-    "loginId": "注册ID",
-    "return": "戻る"
+    "label": {
+        "name": "名称",
+        "belong": "属于",
+        "tel": "电话号码",
+        "email": "邮件地址"
+    },
+    "common": {
+        "regist": "新规登录",
+        "confirm": "确认",
+        "add": "登录",
+        "see list": "一覧表示",
+        "login": "注册",
+        "loginId": "注册ID",
+        "return": "回报"
+    },
+    "errorMSG": {
+        "er001": "注册ID(%s)不存在。",
+        "er002": "发生数据库访问错误。" ,
+        "er003": "请输入注册ID。"      
+    }
 }
