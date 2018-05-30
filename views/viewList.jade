@@ -1,0 +1,16 @@
+extends layout
+
+block script
+  script(src='/javascripts/viewList.js')
+  script(type="text/javascript").
+    window.onload = function () {
+        showTable("#{name}", "#{belong}", "#{tel}", "#{email}");
+    };
+
+block content
+  h1= title
+
+  dev
+    table(id='result', class='view')
+
+  input(type='button', name='return', value="#{__('return')}", onclick='returnHome()')

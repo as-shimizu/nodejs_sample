@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var registRouter = require('./routes/regist');
 var confirmRouter = require('./routes/confirm');
 var loginRouter = require('./routes/login');
+var viewListRouter = require('./routes/viewList');
 
 var app = express();
 
@@ -66,6 +67,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/regist', registRouter);
 app.use('/confirm', confirmRouter);
+app.use('/viewList', viewListRouter);
 app.use('/login', loginRouter);
 app.use('/', sessionCheck, indexRouter);
 

@@ -15,5 +15,13 @@ module.exports = {
         dbUtil.insert(sql, function(error) {
             return callback(error);
         });
+    },
+
+    selectAll : function(callback) {
+        var sql = 'select * from registUser;'
+        console.log(sql);
+        dbUtil.select(sql, function(error, result) {
+            return callback(error, result);
+        });
     }
 }
