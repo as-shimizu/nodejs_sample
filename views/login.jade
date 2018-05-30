@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p= error
+
+  dev
+    form(method='POST', action='/login')
+      table
+        tr
+          td ログインID
+          td
+            input(type='textbox', name='userName')
+        tr
+          td(colspan='2')
+            input(type='submit', name='loginButton', value='ログイン')
