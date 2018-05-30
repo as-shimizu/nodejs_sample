@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log("pass route/regist.js");
-  res.render('regist', { title: '新規登録' });
+  res.render('regist', { title: 'Add New' });
 });
 
 router.post('/', function(req, res, next) {

@@ -1,1 +1,12 @@
-{}
+{
+    "name": "Name",
+    "belong": "Belong",
+    "tel": "Phone Number",
+    "email": "E-Mail",
+    "regist": "Add New",
+    "confirm": "Confirm",
+    "add": "Add",
+    "see list": "See List",
+    "login": "Login",
+    "loginId": "Login ID"
+}

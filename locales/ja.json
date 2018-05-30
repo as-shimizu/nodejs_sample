@@ -1,8 +1,12 @@
 {
-    "registUser": {
-        "Name": "名前",
-        "Belong": "所属",
-        "Phone Number": "電話番号",
-        "E-Mail": "メールアドレス"
-    }
+    "name": "名前",
+    "belong": "所属",
+    "tel": "電話番号",
+    "email": "メールアドレス",
+    "regist": "新規登録",
+    "confirm": "確認",
+    "add": "登録",
+    "see list": "一覧表示",
+    "login": "ログイン",
+    "loginId": "ログインID"
 }

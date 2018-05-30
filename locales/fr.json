@@ -1,0 +1,12 @@
+{
+    "name": "Prénom",
+    "belong": "Appartenir",
+    "tel": "Téléphone",
+    "email": "E-Mail",
+    "regist": "Nouvelle Inscription",
+    "confirm": "Confirmer",
+    "add": "Ajouter",
+    "see list": "Voir la Liste",
+    "login": "Connexion",
+    "loginId": "Connexion ID"
+}

@@ -1,25 +1,25 @@
 extends layout
 
 block content
-  h1= title
+  h1= __('confirm')
 
   form(method='POST', action='/confirm')
     table  
       tr
-        td 名前
+        td= __('name')
         td #{name}
       tr
-        td 所属  
+        td= __('belong') 
         td #{belong}
       tr
-        td 電話番号
+        td= __('tel')
         td #{tel}
       tr 
-        td メールアドレス
+        td= __('email')
         td #{email}
     input(type='hidden', name='name', value='#{name}')
     input(type='hidden', name='belong', value='#{belong}')
     input(type='hidden', name='tel', value='#{tel}')
     input(type='hidden', name='email', value='#{email}')
-    input(type='submit', id='regist', value='登録')
+    input(type='submit', id='regist', value="#{__('add')}")
   

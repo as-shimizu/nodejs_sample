@@ -1,24 +1,24 @@
 extends layout
 
 block content
-  h1= title
+  h1= __('regist')
 
   form(method='POST', action='/regist')
     table
       tr
-        td 名前
+        td= __('name')
         td
           input(type='textbox', name='name')
       tr
-        td 所属  
+        td= __('belong')  
         td
           input(type='textbox', name='belong')
       tr
-        td 電話番号
+        td= __('tel')
         td 
           input(type='textbox', name='tel')
       tr 
-        td メールアドレス
+        td= __('email')
         td
           input(type='textbox', name='email')
-    input(type='submit', id='send', value='確認')
+    input(type='submit', id='send', value="#{__('confirm')}")

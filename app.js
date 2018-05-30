@@ -42,6 +42,26 @@ var sessionCheck = function(req, res, next) {
   }
 };
 
+//for i18n
+i18n.configure({
+  // 利用するlocalesを設定。これが辞書ファイルとひも付きます
+  locales: ['ja', 'en', 'zh', 'fr'],
+  defaultLocale: 'ja',
+  // 辞書ファイルのありかを指定
+  directory: __dirname + "/locales",
+  // オブジェクトを利用したい場合はtrue
+  objectNotation: true
+});
+
+app.use(i18n.init);
+// manualでi18nセッション管理できるように設定しておきます
+app.use(function (req, res, next) {
+  if (req.session.locale) {
+    i18n.setLocale(req, req.session.locale);
+  }
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/regist', registRouter);
@@ -63,26 +83,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-//for i18n
-i18n.configure({
-  // 利用するlocalesを設定。これが辞書ファイルとひも付きます
-  locales: ['ja', 'en'],
-  defaultLocale: 'ja',
-  // 辞書ファイルのありかを指定
-  directory: __dirname + "/locales",
-  // オブジェクトを利用したい場合はtrue
-  objectNotation: true
-});
-
-app.use(i18n.init);
-// manualでi18nセッション管理できるように設定しておきます
-app.use(function (req, res, next) {
-  if (req.session.locale) {
-    i18n.setLocale(req, req.session.locale);
-  }
-  next();
 });
 
 module.exports = app;
