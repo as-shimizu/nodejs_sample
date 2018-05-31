@@ -7,12 +7,14 @@ var util = require('util');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  i18n.setLocale(req.locale);
   var title = i18n.__('common.login');
   res.render('login', { title: title });
 });
 
 router.post('/', function(req, res, next) {
     if(req.body.userName) {
+      i18n.setLocale(req.body.lang);
       if(req.body.userName == "123") {
         req.session.user = {name: req.body.userName};
         res.redirect('../');

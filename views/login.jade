@@ -1,5 +1,11 @@
 extends layout
 
+block script
+  script(type="text/javascript").
+    window.onload = function () {
+        getLocale();
+    };
+
 block content
   h1= __('common.login')
   p(class='error')= error
@@ -13,4 +19,5 @@ block content
             input(type='textbox', name='userName')
         tr
           td(colspan='2')
+            input(type='hidden', name='lang', id='lang')
             input(type='submit', class='btn', name='loginButton', value="#{__('common.login')}")

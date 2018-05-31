@@ -22,5 +22,6 @@
 	},
 	"regist": "regist",
 	"confirn": "confirn",
-	"see list": "see list"
+	"see list": "see list",
+	"#{error}": "#{error}"
 }
