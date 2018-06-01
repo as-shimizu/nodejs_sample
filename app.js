@@ -46,7 +46,7 @@ var sessionCheck = function(req, res, next) {
 //for i18n
 i18n.configure({
   // 利用するlocalesを設定。これが辞書ファイルとひも付きます
-  locales: ['ja', 'en', 'zh', 'fr'],
+  locales: ['ja', 'en', 'zh', 'fr','ru'],
   defaultLocale: 'ja',
   // 辞書ファイルのありかを指定
   directory: __dirname + "/locales",
