@@ -1,27 +1,37 @@
 var pg      = require('pg');
-var dbConnect = require('../conf/dbConfig.js');
+var dbConnect = require('../conf/dbConf.js');
 
 module.exports = {
-    select : function(sql, callback) {
+    select : function(sql, parameter, callback) {
         var client = new pg.Client(dbConnect.dbConnectStr);
-	client.connect(function (error) {
+        client.connect(function (error) {
             if (error) {
-                rollback(client);
                 return callback(error, null);
             }
-	client.query({text : sql}, function (error, result) {
-            return callback(error,result);
+            client.query(sql, parameter, function (error, result) {
+                if (error) {
+                    return callback(error, null);
+                } 
+                client.end();
+                return callback(error,result);
+            });
         });
     },
-    insert : function(sql, callback) {
-        //getConnection(function(status) {
-            //if(status) {
-                connection.query(sql, function (error, result, field) {
-                    //connection.end();
-                    return callback(error,result);
-                });
-            //}
-        //}); 
+    insert : function(sql, parameter, callback) {
+        var client = new pg.Client(dbConnect.dbConnectStr);
+        client.connect(function (error) {
+            if (error) {
+                 rollback(client);
+                return callback(error, null);
+            }
+            client.query(sql, parameter, function (error, result) {
+                if (error) {
+                    return callback(error, null);
+                } 
+                client.end();
+                return callback(error,result);
+            });
+        });
     }
 }
 

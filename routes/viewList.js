@@ -16,11 +16,11 @@ router.get('/', function(req, res, next) {
         var belong = [];
         var tel = [];
         var email = [];
-        for(var i=0; i < result.length; i++) {
-            name.push(result[i].name);
-            belong.push(result[i].belong);
-            tel.push(result[i].tel);
-            email.push(result[i].email);
+        for(var i=0; i < result.rows.length; i++) {
+            name.push(result.rows[i].name);
+            belong.push(result.rows[i].belong);
+            tel.push(result.rows[i].tel);
+            email.push(result.rows[i].email);
         }
         res.render('viewList', { title: i18n.__('common.see list'),
                                  name: name, belong: belong, tel: tel, email: email

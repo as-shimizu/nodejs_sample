@@ -19,11 +19,11 @@ router.post('/', function(req, res, next) {
   console.log("pass post of route/confirm.js");
   registUser.insertData(req.body.name, req.body.belong, req.body.tel, req.body.email, function(error) {
     if (error) {
-      var a = 'confirm?name=' + req.body.name + '&belong=' + req.body.belong + '&tel=' + req.body.tel + '&email=' + req.body.email;
       var message = i18n.__('errorMSG.er002');
-      res.render(a, {error: message});
+      var a = 'confirm?name=' + req.body.name + '&belong=' + req.body.belong + '&tel=' + req.body.tel + '&email=' + req.body.email;
+      res.redirect(a, {error: message});
     } else {
-      res.redirect("/");
+      res.render("index", {title: "Home"});
     }
   });
 });
