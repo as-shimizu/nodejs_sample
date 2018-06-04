@@ -1,16 +1,15 @@
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : '172.19.9.11',
-  user     : 'root',
-  password : 'root',
-  database : 'sample',
-  port : '3306'
-});
+var pg      = require('pg');
+var dbConnect = require('../conf/dbConfig.js');
 
 module.exports = {
     select : function(sql, callback) {
-        //getConnection();
-        connection.query(sql, function (error, result, field) {
+        var client = new pg.Client(dbConnect.dbConnectStr);
+	client.connect(function (error) {
+            if (error) {
+                rollback(client);
+                return callback(error, null);
+            }
+	client.query({text : sql}, function (error, result) {
             return callback(error,result);
         });
     },
